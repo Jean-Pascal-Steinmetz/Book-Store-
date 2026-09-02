@@ -3,9 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Store</title>
+    <title>DA Bookstore</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <link rel="shortcut icon" href="assets/icons/favicon-klein.png">
 </head>
-<body>
-    
+<body onload="renderBooks()">
+    <header>
+        <img src="./assets/icons/favicon-mittel.png" alt="Buch Logo">
+        <h1>DA Bookstore - get your book here </h1>
+    </header>
+
+    <main>
+        <div id="bookBox" class="allBooks"></div>
+    </main>
+
+    <footer>
+        <img src="./assets/icons/da-logo.svg" alt="Developer Akademie Logo">
+    </footer>
 </body>
 </html>
+
+
