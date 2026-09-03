@@ -1,5 +1,6 @@
 *{
     margin:  0;
+    color: white;
 }
 
 
@@ -8,7 +9,32 @@ body{
 }
 header{
     background-color: rgb(40, 67, 67);
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+    padding-top: 20px;
 }
-.allBooks{
-    gap: 25px;
+main{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 275px;
+}
+.single-book>img{
+    height: 100px
+}
+.single-book{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid white;
+    border-radius: 25px;
+    width: 400px;
+    
+}
+footer{
+    background-color:rgb(40, 67, 67);
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+    padding-top: 20px;
 }
