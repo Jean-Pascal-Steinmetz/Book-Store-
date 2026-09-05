@@ -13,26 +13,7 @@ let books = [
         comment:
           "Ein faszinierendes Abenteuerbuch, das mich von der ersten Seite an gefesselt hat.",
       },
-      {
-        name: "Bookworm84",
-        comment:
-          "Eine romantische Geschichte, die mein Herz berührt und mich zum Nachdenken gebracht hat.",
-      },
-      {
-        name: "FantasyFanatic",
-        comment:
-          "Eine spannende Fantasiewelt, die ich nur schwer aus der Hand legen konnte.",
-      },
-      {
-        name: "SciFiGuru",
-        comment:
-          "Ein cleverer Science-Fiction-Roman mit interessanten Zeitreise-Konzepten und Charakteren.",
-      },
-      {
-        name: "NovelLover",
-        comment:
-          "Ein Buch, das voller magischer Überraschungen steckt und mich begeistert hat.",
-      },
+      
     ],
   },
   {
@@ -59,26 +40,7 @@ let books = [
         comment:
           "Die Handlung war fesselnd und die Charaktere unglaublich lebendig dargestellt.",
       },
-      {
-        name: "BookLover21",
-        comment:
-          "Ein romantisches Meisterwerk, das mich tief berührt und bewegt hat.",
-      },
-      {
-        name: "FantasyNerd",
-        comment:
-          "Fantastische Welten und epische Abenteuer - genau mein Geschmack!",
-      },
-      {
-        name: "SciFiEnthusiast",
-        comment:
-          "Die Zeitreise-Elemente waren genial und haben die Story spannend gemacht.",
-      },
-      {
-        name: "ReadingAddict",
-        comment:
-          "Ein unvergessliches Buch, das mich auf eine magische Reise mitgenommen hat.",
-      },
+      
     ],
   },
   {
@@ -95,11 +57,7 @@ let books = [
         comment:
           "Ein spannendes Abenteuer, das mich von Anfang an mitgerissen hat.",
       },
-      {
-        name: "LeseWurm",
-        comment:
-          "Die Liebesgeschichte war herzergreifend und wunderschön geschrieben.",
-      },
+      
     ],
   },
   {
@@ -126,11 +84,7 @@ let books = [
         comment:
           "Eine magische Reise durch eine faszinierende Fantasiewelt, absolut fesselnd.",
       },
-      {
-        name: "Leseratte",
-        comment:
-          "Ein packender Science-Fiction-Roman, der mich zum Nachdenken gebracht hat.",
-      },
+      
     ],
   },
   {
@@ -179,16 +133,7 @@ let books = [
         comment:
           "Die Fantasiewelt war so lebendig, ich konnte das Buch kaum aus der Hand legen.",
       },
-      {
-        name: "StorySeeker",
-        comment:
-          "Eine unglaublich berührende Liebesgeschichte, die mich tief bewegt hat.",
-      },
-      {
-        name: "SciFiExplorer",
-        comment:
-          "Spannende Zukunftsvisionen und interessante Charaktere machten diesen Roman einzigartig.",
-      },
+      
     ],
   },
 ];
@@ -199,16 +144,18 @@ function renderBooks() {
         <div class = "single-book">
         <h3>${books[i].name}</h3>
         <img src="./assets/img/buch_transparent.png" alt="Offenes Buch">
-        <p>${books[i].price}€</p>
-        <p>${books[i].author}</p>
-        <p>${books[i].publishedYear}</p>
-        <p>${books[i].genre}</p>
-        `;
+        <p class="preis">${books[i].price}€</p>
+        <p>Autor: ${books[i].author}</p>
+        <p>Erscheinungsjahr: ${books[i].publishedYear}</p>
+        <p>Genre: ${books[i].genre}</p>
+        <button class="like-btn" onclick="addLike(${i})"><img src="./assets/icons/like.png" alt="Daumen hoch"> ${books[i].likes}</button>
+        </div>
+        `
   }
- 
 }
 
-
-
-
-
+function addLike(i) {
+  books[i].likes++;
+  document.getElementById("bookBox").innerHTML = "";
+  renderBooks();
+}

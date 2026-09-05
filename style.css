@@ -1,27 +1,41 @@
+/* cal-sans-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Cal Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./assets/fonts/cal-sans-v2-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+
 *{
     margin:  0;
     color: white;
+    font-family: 'Cal Sans';
 }
-
 
 body{
-    background-color: darkslategrey;
+    background-color: #0F172A;
 }
+
 header{
-    background-color: rgb(40, 67, 67);
+    background-color: #38BDF8 ;
     display: flex;
     justify-content: center;
     padding-bottom: 20px;
     padding-top: 20px;
 }
+
 main{
     padding-top: 20px;
     padding-bottom: 20px;
     padding-left: 275px;
 }
+
 .single-book>img{
     height: 100px
 }
+
 .single-book{
     display: flex;
     flex-direction: column;
@@ -29,12 +43,38 @@ main{
     border: 2px solid white;
     border-radius: 25px;
     width: 400px;
-    
+    background-color: #1b2742;
+    gap :20px;
 }
+
 footer{
-    background-color:rgb(40, 67, 67);
+    background-color:#38BDF8;
     display: flex;
     justify-content: center;
     padding-bottom: 20px;
     padding-top: 20px;
+}
+
+.like-btn{
+   background-color: #1b2742;
+   border: none;
+   display: flex;
+   align-items: center;
+   padding-left: 300px;
+   padding-bottom: 10px;
+}
+
+.like-btn>img{
+    width: 25px;
+}
+
+.preis{
+    color: rgba(255, 0, 0, 0.899);
+    font-size: 25px;
+}
+
+#bookBox {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 54px;
 }
