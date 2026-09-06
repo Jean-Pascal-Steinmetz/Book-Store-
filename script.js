@@ -150,7 +150,15 @@ function renderBooks() {
         <p>Genre: ${books[i].genre}</p>
         <button class="like-btn" onclick="addLike(${i})"><img src="./assets/icons/like.png" alt="Daumen hoch"> ${books[i].likes}</button>
         </div>
+        <div class="kommentarbereich">
+    <h4>Kommentare:</h4>
+    <div id="kommentare-${i}"></div>
+    <input type="text" id="kommentarName-${i}" placeholder="Dein Name">
+    <input type="text" id="kommentarText-${i}" placeholder="Dein Kommentar">
+    <button onclick="addComment(${i})">Kommentar senden</button>
+</div>
         `
+        renderComments(i);
   }
 }
 
@@ -158,4 +166,23 @@ function addLike(i) {
   books[i].likes++;
   document.getElementById("bookBox").innerHTML = "";
   renderBooks();
+}
+
+function renderComments(i) {
+    let html = "";
+    for (let j = 0; j < books[i].comments.length; j++) {
+        html += `<p><strong>${books[i].comments[j].name}:</strong> ${books[i].comments[j].comment}</p>`;
+    }
+    document.getElementById("kommentare-" + i).innerHTML = html;
+}
+
+function addComment(i) {
+    let name = document.getElementById("kommentarName-" + i).value;
+    let text = document.getElementById("kommentarText-" + i).value;
+    if (name && text) {
+        books[i].comments.push({ name: name, comment: text });
+        renderComments(i);
+        document.getElementById("kommentarName-" + i).value = "";
+        document.getElementById("kommentarText-" + i).value = "";
+    }
 }
