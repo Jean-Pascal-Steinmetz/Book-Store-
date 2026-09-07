@@ -10,12 +10,12 @@
 
 *{
     margin:  0;
-    color: white;
     font-family: 'Cal Sans';
 }
 
 body{
     background-color: #0F172A;
+    color: white;
 }
 
 header{
@@ -46,6 +46,10 @@ main{
     gap :20px;
 }
 
+#kommentarName{
+    color: rgb(59, 59, 59);
+}
+
 footer{
     background-color:#38BDF8;
     display: flex;
@@ -60,6 +64,8 @@ footer{
    display: flex;
    align-items: center;
    padding:10px;
+   cursor: pointer;
+   color: white;
 }
 
 .like-btn>img{
