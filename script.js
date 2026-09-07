@@ -149,14 +149,14 @@ function renderBooks() {
         <p>Erscheinungsjahr: ${books[i].publishedYear}</p>
         <p>Genre: ${books[i].genre}</p>
         <button class="like-btn" onclick="addLike(${i})"><img src="./assets/icons/like.png" alt="Daumen hoch"> ${books[i].likes}</button>
-        </div>
         <div class="kommentarbereich">
-    <h4>Kommentare:</h4>
-    <div id="kommentare-${i}"></div>
-    <input type="text" id="kommentarName-${i}" placeholder="Dein Name">
-    <input type="text" id="kommentarText-${i}" placeholder="Dein Kommentar">
-    <button onclick="addComment(${i})">Kommentar senden</button>
-</div>
+            <h4>Kommentare:</h4>
+            <div id="kommentare-${i}"></div>
+            <input type="text" id="kommentarName-${i}" placeholder="Dein Name">
+            <input type="text" id="kommentarText-${i}" placeholder="Dein Kommentar">
+            <button onclick="addComment(${i})">Kommentar senden</button>
+        </div>
+        </div>
         `
         renderComments(i);
   }

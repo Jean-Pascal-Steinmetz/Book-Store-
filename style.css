@@ -27,9 +27,7 @@ header{
 }
 
 main{
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 275px;
+    padding: 20px;
 }
 
 .single-book>img{
@@ -42,7 +40,8 @@ main{
     align-items: center;
     border: 2px solid white;
     border-radius: 25px;
-    width: 400px;
+    max-width: 400px;
+    width: 100%;
     background-color: #1b2742;
     gap :20px;
 }
@@ -60,8 +59,7 @@ footer{
    border: none;
    display: flex;
    align-items: center;
-   padding-left: 300px;
-   padding-bottom: 10px;
+   padding:10px;
 }
 
 .like-btn>img{
@@ -76,5 +74,33 @@ footer{
 #bookBox {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 54px;
+}
+/* Handy (max 480px) */
+@media (max-width: 480px) {
+    main {
+        padding-left: 10px ;
+        padding-right: 10px;
+    }
+    
+    .single-book {
+        max-width: 90%;
+    }
+    
+    #bookBox {
+        gap: 16px ;
+    }
+}
+
+/* Tablet (481px bis 1024px) */
+@media (min-width: 481px) and (max-width: 1024px) {
+    main {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    .single-book {
+        max-width: 350px;
+    }
 }
